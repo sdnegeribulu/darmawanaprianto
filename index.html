@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Digital - Darmawan Aprianto, S.Pd.</title>
+    <!-- Menggunakan Tailwind CSS untuk styling modern dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan Google Fonts untuk tipografi yang lebih baik -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Menggunakan font Inter sebagai font utama */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style untuk transisi halaman yang lebih mulus */
+        .page-content {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+
+    <div id="app" class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- ======================================================= -->
+        <!-- HALAMAN UTAMA / HOME                                    -->
+        <!-- ======================================================= -->
+        <div id="home-page" class="page-content">
+            <!-- Header dan Biodata -->
+            <header class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <!-- Foto Profil -->
+                    <div class="flex-shrink-0">
+                        <img src="https://placehold.co/150x150/38bdf8/ffffff?text=Foto+Anda" alt="Foto Profil Guru" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-cyan-200 shadow-md">
+                    </div>
+                    <!-- Nama dan Deskripsi -->
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-cyan-700">Darmawan Aprianto, S.Pd.</h1>
+                        <p class="text-lg text-slate-600 mt-1 font-medium">Guru di SD Negeri Bulu, Kecamatan Selogiri, Kabupaten Wonogiri</p>
+                        <p class="mt-4 text-slate-700 leading-relaxed">
+                            Selamat datang di portofolio digital saya. Sebagai seorang pendidik, saya berkomitmen untuk menciptakan lingkungan belajar yang inspiratif dan inovatif. Di sini, saya mendokumentasikan berbagai perangkat ajar, kegiatan kokurikuler, dan momen-momen penting dalam perjalanan saya mendidik generasi penerus bangsa.
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Galeri Portofolio -->
+            <main>
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl font-bold text-slate-800">Galeri Portofolio</h2>
+                    <p class="text-slate-500">Silakan jelajahi karya dan dokumentasi kegiatan saya.</p>
+                </div>
+                
+                <!-- 3 Tombol Navigasi dalam bentuk Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Tombol 1: Perangkat Ajar -->
+                    <button onclick="showPage('page-1')" class="nav-button">
+                        <div class="icon-container bg-blue-100 text-blue-600">
+                            <!-- SVG Icon: Book Open -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        </div>
+                        <h3 class="font-semibold text-xl">Perangkat Ajar</h3>
+                        <p class="text-sm text-slate-500">Kumpulan modul, media, dan instrumen asesmen.</p>
+                    </button>
+                    
+                    <!-- Tombol 2: Kokurikuler -->
+                    <button onclick="showPage('page-2')" class="nav-button">
+                        <div class="icon-container bg-green-100 text-green-600">
+                           <!-- SVG Icon: Star -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h3 class="font-semibold text-xl">Kokurikuler</h3>
+                        <p class="text-sm text-slate-500">Proyek dan kegiatan penguatan profil pelajar.</p>
+                    </button>
+
+                    <!-- Tombol 3: Dokumentasi -->
+                    <button onclick="showPage('page-3')" class="nav-button">
+                        <div class="icon-container bg-red-100 text-red-600">
+                            <!-- SVG Icon: Camera -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                        </div>
+                        <h3 class="font-semibold text-xl">Dokumentasi</h3>
+                        <p class="text-sm text-slate-500">Galeri foto dan video kegiatan pembelajaran.</p>
+                    </button>
+                </div>
+            </main>
+
+            <footer class="text-center mt-12 text-slate-500">
+                <p>&copy; <span id="year"></span> | Dibuat oleh Darmawan Aprianto, S.Pd.</p>
+            </footer>
+        </div>
+        
+        <!-- ======================================================= -->
+        <!-- TEMPLATE UNTUK HALAMAN-HALAMAN KONTEN                   -->
+        <!-- ======================================================= -->
+        
+        <!-- Halaman 1: Perangkat Ajar -->
+        <div id="page-1" class="page-content hidden">
+            <div class="content-container">
+                <button onclick="showPage('home-page')" class="back-button">
+                    &larr; Kembali ke Halaman Utama
+                </button>
+                <h2 class="content-title">Perangkat Ajar</h2>
+                <p class="content-description">
+                    Berikut adalah kumpulan perangkat ajar yang saya kembangkan untuk mendukung proses belajar mengajar, mencakup modul ajar, media presentasi, lembar kerja, dan instrumen asesmen.
+                </p>
+                <!-- Contoh Konten -->
+                <div class="content-placeholder space-y-4">
+                    <div class="border rounded-lg p-4 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-semibold">Modul Ajar IPAS - Siklus Air</h4>
+                            <p class="text-sm text-slate-500">Format: PDF, Ukuran: 3.2MB</p>
+                        </div>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">Unduh</a>
+                    </div>
+                     <div class="border rounded-lg p-4 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-semibold">Media Presentasi Canva - Bangun Ruang</h4>
+                            <p class="text-sm text-slate-500">Tautan eksternal ke Canva</p>
+                        </div>
+                        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">Lihat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Halaman 2: Kokurikuler -->
+        <div id="page-2" class="page-content hidden">
+            <div class="content-container">
+                <button onclick="showPage('home-page')" class="back-button">
+                    &larr; Kembali ke Halaman Utama
+                </button>
+                <h2 class="content-title">Kegiatan Kokurikuler</h2>
+                <p class="content-description">
+                    Dokumentasi pelaksanaan kegiatan kokurikuler, seperti Projek Penguatan Profil Pelajar Pancasila (P5), yang bertujuan untuk mengembangkan karakter dan kompetensi siswa di luar kelas.
+                </p>
+                <div class="content-placeholder">
+                    <h4 class="font-semibold mb-2">P5: Gaya Hidup Berkelanjutan - "Sekolahku Hijau"</h4>
+                     <img src="https://placehold.co/600x300/a0aec0/ffffff?text=Foto+Kegiatan+P5" alt="Foto Proyek Siswa" class="rounded-lg w-full object-cover mb-4">
+                    <p>Siswa belajar mengelola sampah, membuat kompos, dan menanam tanaman obat di lingkungan sekolah. Proyek ini menumbuhkan kesadaran siswa akan pentingnya menjaga lingkungan dan menerapkan gaya hidup berkelanjutan dalam keseharian.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Halaman 3: Dokumentasi -->
+        <div id="page-3" class="page-content hidden">
+             <div class="content-container">
+                <button onclick="showPage('home-page')" class="back-button">
+                    &larr; Kembali ke Halaman Utama
+                </button>
+                <h2 class="content-title">Dokumentasi Kegiatan</h2>
+                <p class="content-description">
+                    Galeri ini berisi momen-momen yang terekam selama kegiatan belajar mengajar, perayaan hari besar, dan acara-acara sekolah lainnya.
+                </p>
+                 <div class="content-placeholder grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <img src="https://placehold.co/400x400/d3dce6/ffffff?text=Kegiatan+1" alt="Dokumentasi 1" class="rounded-lg w-full aspect-square object-cover">
+                    <img src="https://placehold.co/400x400/d3dce6/ffffff?text=Kegiatan+2" alt="Dokumentasi 2" class="rounded-lg w-full aspect-square object-cover">
+                    <img src="https://placehold.co/400x400/d3dce6/ffffff?text=Kegiatan+3" alt="Dokumentasi 3" class="rounded-lg w-full aspect-square object-cover">
+                    <img src="https://placehold.co/400x400/d3dce6/ffffff?text=Kegiatan+4" alt="Dokumentasi 4" class="rounded-lg w-full aspect-square object-cover">
+                    <img src="https://placehold.co/400x400/d3dce6/ffffff?text=Kegiatan+5" alt="Dokumentasi 5" class="rounded-lg w-full aspect-square object-cover">
+                    <img src="https://placehold.co/400x400/d3dce6/ffffff?text=Kegiatan+6" alt="Dokumentasi 6" class="rounded-lg w-full aspect-square object-cover">
+                 </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script untuk Navigasi Halaman dan utilitas lainnya -->
+    <script>
+        // Fungsi untuk menampilkan halaman yang dipilih dan menyembunyikan yang lain
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => {
+                page.classList.add('hidden');
+            });
+
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Script untuk menampilkan tahun sekarang di footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Style umum yang diterapkan menggunakan JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                .nav-button {
+                    @apply bg-white p-6 rounded-xl shadow-md text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.75rem; /* 12px */
+                }
+                .icon-container {
+                    @apply w-16 h-16 rounded-full flex items-center justify-center mb-2;
+                }
+                .content-container {
+                    @apply bg-white rounded-xl shadow-lg p-6 sm:p-8;
+                }
+                .back-button {
+                    @apply mb-6 font-semibold text-cyan-700 hover:text-cyan-800 transition;
+                }
+                .content-title {
+                    @apply text-2xl md:text-3xl font-bold text-cyan-700 mb-2;
+                }
+                .content-description {
+                     @apply text-slate-600 mb-6;
+                }
+                .content-placeholder {
+                    @apply border-t pt-6;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+    </script>
+</body>
+</html>
+
