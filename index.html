@@ -13,7 +13,6 @@
     
     <script>
         // Skrip untuk mencegah FOUC (Flash of Unstyled Content) saat dark mode aktif
-        // Langsung dijalankan untuk menerapkan tema sebelum halaman di-render
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -22,21 +21,12 @@
     </script>
     
     <style>
-        /* Menggunakan font Inter sebagai font utama */
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        /* Style untuk transisi halaman yang mulus */
-        .page-content {
-            animation: fadeIn 0.5s ease-in-out;
-        }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .page-content { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Custom scrollbar style */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
@@ -46,9 +36,7 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
 
-    <!-- ======================================================= -->
-    <!-- NAVBAR                                                  -->
-    <!-- ======================================================= -->
+    <!-- NAVBAR -->
     <nav class="bg-white/70 dark:bg-slate-800/70 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200 dark:border-slate-700">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -70,15 +58,11 @@
 
     <div id="app" class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
 
-        <!-- ======================================================= -->
-        <!-- HALAMAN UTAMA / HOME                                    -->
-        <!-- ======================================================= -->
+        <!-- HALAMAN UTAMA / HOME -->
         <div id="home-page" class="page-content">
             <!-- Hero Section -->
             <header class="text-center py-16">
-                <!-- NAMA FILE FOTO SUDAH DIUBAH DI SINI -->
                 <img src="fotokgb.jpg" alt="Foto Profil Darmawan Aprianto" class="w-40 h-40 mx-auto rounded-full object-cover mb-6 ring-4 ring-slate-200 dark:ring-slate-700 shadow-lg">
-                <!-- AKHIR BAGIAN YANG DIGANTI -->
                 <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">Darmawan Aprianto, S.Pd.</h1>
                 <p class="text-xl text-slate-600 dark:text-slate-400 mt-2">Guru di SD Negeri Bulu, Kecamatan Selogiri</p>
                 <p class="max-w-3xl mx-auto mt-6 text-slate-700 dark:text-slate-300">
@@ -98,14 +82,17 @@
             <!-- Portfolio Section -->
             <main>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Tombol 1: Perangkat Ajar -->
-                    <button onclick="showPage('page-1')" class="nav-card">
+                    
+                    <!-- ======================================================= -->
+                    <!-- KARTU 1: PERANGKAT AJAR (DIUBAH MENJADI LINK)           -->
+                    <!-- ======================================================= -->
+                    <a href="https://drive.google.com/drive/folders/1mH1dickQtXcpG13mtzeKm17cDxDCYKnY?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-card">
                         <div class="icon-container bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300">
                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
                         </div>
                         <h3 class="font-bold text-xl">Perangkat Ajar</h3>
-                        <p class="text-sm text-slate-500 dark:text-slate-400">Modul, media, dan instrumen asesmen yang saya kembangkan.</p>
-                    </button>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Buka folder Google Drive berisi modul, media, dan asesmen.</p>
+                    </a>
                     
                     <!-- Tombol 2: Kokurikuler -->
                     <button onclick="showPage('page-2')" class="nav-card">
@@ -128,40 +115,9 @@
             </main>
         </div>
         
-        <!-- ======================================================= -->
-        <!-- CONTENT PAGES                                           -->
-        <!-- ======================================================= -->
+        <!-- CONTENT PAGES -->
         
-        <!-- Halaman 1: Perangkat Ajar -->
-        <div id="page-1" class="page-content hidden">
-            <div class="content-container">
-                <button onclick="showPage('home-page')" class="back-button">
-                    &larr; Kembali
-                </button>
-                <h2 class="content-title">Perangkat Ajar</h2>
-                <p class="content-description">
-                    Kumpulan perangkat ajar yang saya kembangkan untuk mendukung proses belajar mengajar, mencakup modul ajar, media presentasi, lembar kerja, dan instrumen asesmen.
-                </p>
-                <div class="content-placeholder space-y-4">
-                    <a href="#" class="content-item-link">
-                        <div>
-                            <h4 class="font-semibold text-slate-800 dark:text-slate-100">Modul Ajar IPAS - Siklus Air</h4>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">Format: PDF, Ukuran: 3.2MB</p>
-                        </div>
-                        <span class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Unduh &rarr;</span>
-                    </a>
-                    <a href="#" class="content-item-link">
-                        <div>
-                            <h4 class="font-semibold text-slate-800 dark:text-slate-100">Media Presentasi Canva - Bangun Ruang</h4>
-                            <p class="text-sm text-slate-500 dark:text-slate-400">Tautan eksternal ke Canva</p>
-                        </div>
-                        <span class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Lihat &rarr;</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Halaman 2: Kokurikuler -->
+        <!-- Halaman Kokurikuler -->
         <div id="page-2" class="page-content hidden">
             <div class="content-container">
                 <button onclick="showPage('home-page')" class="back-button">
@@ -179,7 +135,7 @@
             </div>
         </div>
         
-        <!-- Halaman 3: Dokumentasi -->
+        <!-- Halaman Dokumentasi -->
         <div id="page-3" class="page-content hidden">
              <div class="content-container">
                 <button onclick="showPage('home-page')" class="back-button">
@@ -193,17 +149,12 @@
                     <img src="https://placehold.co/400x400/1e293b/94a3b8?text=Foto+1" alt="Dokumentasi 1" class="gallery-image">
                     <img src="https://placehold.co/400x400/1e293b/94a3b8?text=Foto+2" alt="Dokumentasi 2" class="gallery-image">
                     <img src="https://placehold.co/400x400/1e293b/94a3b8?text=Foto+3" alt="Dokumentasi 3" class="gallery-image">
-                    <img src="https://placehold.co/400x400/1e293b/94a3b8?text=Foto+4" alt="Dokumentasi 4" class="gallery-image">
-                    <img src="https://placehold.co/400x400/1e293b/94a3b8?text=Foto+5" alt="Dokumentasi 5" class="gallery-image">
-                    <img src="https://placehold.co/400x400/1e293b/94a3b8?text=Foto+6" alt="Dokumentasi 6" class="gallery-image">
                  </div>
             </div>
         </div>
     </div>
     
-    <!-- ======================================================= -->
-    <!-- FOOTER                                                  -->
-    <!-- ======================================================= -->
+    <!-- FOOTER -->
     <footer class="border-t border-slate-200 dark:border-slate-800 mt-16">
         <div class="max-w-7xl mx-auto text-center py-6 px-4">
             <p class="text-slate-500 dark:text-slate-400 text-sm">&copy; <span id="year"></span> Darmawan Aprianto, S.Pd. Dibuat untuk portofolio di GitHub.</p>
@@ -211,11 +162,8 @@
     </footer>
 
 
-    <!-- ======================================================= -->
-    <!-- JAVASCRIPT LOGIC                                        -->
-    <!-- ======================================================= -->
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        // --- PAGE NAVIGATION LOGIC ---
         function showPage(pageId) {
             document.querySelectorAll('.page-content').forEach(page => page.classList.add('hidden'));
             const targetPage = document.getElementById(pageId);
@@ -225,14 +173,11 @@
             }
         }
 
-        // --- DYNAMIC YEAR IN FOOTER ---
         document.getElementById('year').textContent = new Date().getFullYear();
         
-        // --- DARK MODE TOGGLE LOGIC ---
         const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
         const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-        // Set icon visibility based on current theme
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             themeToggleLightIcon.classList.remove('hidden');
         } else {
@@ -263,8 +208,6 @@
             }
         });
 
-        // --- APPLYING COMMON STYLES WITH JAVASCRIPT ---
-        // This keeps the HTML cleaner by defining reusable component styles here.
         document.addEventListener('DOMContentLoaded', function() {
             const style = document.createElement('style');
             style.innerHTML = `
@@ -276,7 +219,6 @@
                 .content-title { @apply text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2; }
                 .content-description { @apply text-slate-600 dark:text-slate-400 mb-8; }
                 .content-placeholder { @apply border-t border-slate-200 dark:border-slate-700 pt-8; }
-                .content-item-link { @apply flex items-center justify-between bg-slate-100/80 dark:bg-slate-800/80 hover:bg-slate-200/70 dark:hover:bg-slate-700/80 p-4 rounded-lg border border-slate-200 dark:border-slate-700 transition-colors; }
                 .gallery-image { @apply rounded-lg w-full aspect-square object-cover transition-transform duration-300 hover:scale-105; }
             `;
             document.head.appendChild(style);
